@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bountero | Modern Frontier</title>
+    <style>
+        /* This is your exact background color */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #F7E37D; /* Adjust this hex code to match your yellow exactly */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            font-family: sans-serif;
+        }
+
+        .container {
+            position: relative;
+            text-align: center;
+        }
+
+        /* Animation for the Logo and Landscape */
+        .hero-asset {
+            max-width: 80%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: riseUp 1s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+
+        /* Animation for the Button */
+        .cta-button {
+            margin-top: -20px; /* Adjust this to sit perfectly on your horizon line */
+            opacity: 0;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            animation: fadeIn 1s ease-out forwards;
+            animation-delay: 1.8s; /* Waits for the logo to finish */
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes riseUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="wordmark.png" alt="Bountero" class="hero-asset">
+        
+        <img src="landscape.png" alt="Horizon" class="hero-asset" style="margin-top: -50px;">
+
+        <div class="cta-button">
+            <a href="YOUR_CALENDLY_LINK_HERE">
+                <img src="book-demo.png" alt="Book Demo" style="width: 200px;">
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
