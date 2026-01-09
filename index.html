@@ -19,18 +19,20 @@
             background-color: #F7E37D;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
-            padding: 60px 20px 40px;
+            padding-top: 80px;
+            gap: 40px;
         }
 
         .wordmark {
             width: 966px;
-            max-width: 90vw;
+            max-width: 85vw;
             height: auto;
             opacity: 0;
             transform: translateY(30px);
             animation: riseIn 0.8s ease-out forwards;
+            filter: drop-shadow(8px 8px 4px rgba(0, 0, 0, 0.4));
             z-index: 3;
         }
 
@@ -43,13 +45,13 @@
 
         .cta-container {
             position: relative;
-            width: 360px;
-            max-width: 80vw;
-            height: 144px;
+            width: 280px;
+            height: 112px;
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 2;
+            margin-top: 20px;
         }
 
         .cta-oval {
@@ -67,15 +69,19 @@
             transform: scale(1.05);
         }
 
+        .cta-container:hover .cta-text {
+            transform: scale(1.05);
+        }
+
         .cta-text {
             position: relative;
-            width: 700px;
-            max-width: 75vw;
+            width: 180px;
             height: auto;
             opacity: 0;
             animation: fadeFlicker 2s forwards;
             animation-delay: 2s;
             pointer-events: none;
+            transition: transform 0.2s ease;
         }
 
         @keyframes fadeFlicker {
@@ -118,39 +124,41 @@
         }
 
         .landscape {
-            width: 100%;
-            max-width: 1400px;
+            position: absolute;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 85%;
+            max-width: 1100px;
             height: auto;
             display: block;
             z-index: 1;
         }
 
         @media (max-width: 1024px) {
-            body {
-                padding: 40px 15px 30px;
-            }
-
             .wordmark {
                 width: 720px;
             }
             
             .cta-container {
-                width: 288px;
-                height: 115px;
+                width: 240px;
+                height: 96px;
             }
 
             .cta-text {
-                width: 550px;
+                width: 150px;
             }
 
             .landscape {
-                max-width: 1100px;
+                width: 80%;
+                bottom: 50px;
             }
         }
 
         @media (max-width: 768px) {
             body {
-                padding: 30px 10px 20px;
+                padding-top: 60px;
+                gap: 30px;
             }
 
             .wordmark {
@@ -158,8 +166,39 @@
             }
             
             .cta-container {
-                width: 216px;
-                height: 86px;
+                width: 200px;
+                height: 80px;
+                margin-top: 10px;
+            }
+
+            .cta-oval {
+                border: 10px solid #000;
+            }
+
+            .cta-text {
+                width: 125px;
+            }
+
+            .landscape {
+                width: 75%;
+                bottom: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding-top: 40px;
+                gap: 20px;
+            }
+
+            .wordmark {
+                width: 80vw;
+            }
+            
+            .cta-container {
+                width: 35vw;
+                height: 14vw;
+                margin-top: 5px;
             }
 
             .cta-oval {
@@ -167,34 +206,12 @@
             }
 
             .cta-text {
-                width: 412px;
+                width: 22vw;
             }
 
             .landscape {
-                max-width: 850px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .wordmark {
-                width: 85vw;
-            }
-            
-            .cta-container {
-                width: 45vw;
-                height: 18vw;
-            }
-
-            .cta-oval {
-                border: 6px solid #000;
-            }
-
-            .cta-text {
                 width: 70vw;
-            }
-
-            .landscape {
-                max-width: 95vw;
+                bottom: 30px;
             }
         }
     </style>
