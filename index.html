@@ -5,80 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BOUNTERO | Bounties for outbound</title>
     <style>
-        /* This is your exact background color */
         body {
+            background-color: #F7E37D; /* Exact match to your Canva yellow */
             margin: 0;
-            padding: 0;
-            background-color: #F7E37D; /* Adjust this hex code to match your yellow exactly */
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
-            padding-top: 5vh;
+            justify-content: center;
             height: 100vh;
             overflow: hidden;
-            font-family: sans-serif;
         }
 
         .container {
-            position: relative;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 800px; /* Limits the size so it doesn't cut off */
         }
 
-        /* Animation for the Logo and Landscape */
-        .hero-asset {
-            max-width: 90%;
+        .wordmark {
+            width: 90%;
             height: auto;
-            display: block;
-            margin: 0 auto;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: riseUp 1s ease-out forwards;
-            animation-delay: 0.5s;
+            margin-bottom: -20px; /* Pulls landscape closer to the wordmark */
         }
 
-        /* Animation for the Button */
-        .cta-button {
-            z-index: 10;
-            margin-top: -20px; /* Adjust this to sit perfectly on your horizon line */
-            opacity: 0;
+        .landscape {
+            width: 100%;
+            height: auto;
+        }
+
+        .book-demo {
+            margin-top: 20px;
+            width: 250px; /* Adjust size of your button asset */
             cursor: pointer;
-            transition: transform 0.2s ease;
-            animation: fadeIn 1s ease-out forwards;
-            animation-delay: 1.8s; /* Waits for the logo to finish */
+            transition: transform 0.2s;
         }
 
-        .cta-button:hover {
+        .book-demo:hover {
             transform: scale(1.05);
-        }
-
-        @keyframes riseUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
         }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <img src="Wordmark.png" alt="Bountero" class="hero-asset">
+        <img src="Wordmark.png" class="wordmark" alt="Bountero">
         
-        <img src="Landscape.png" alt="Horizon" class="hero-asset" style="margin-top: -50px;">
+        <img src="Landscape.png" class="landscape" alt="Horizon">
 
-        <div class="cta-button">
-            <a href="YOUR_CALENDLY_LINK_HERE">
-                <img src="book_demo.png" alt="Book Demo" style="width: 200px;">
-            </a>
-        </div>
+        <a href="YOUR_CALENDLY_LINK">
+            <img src="book_demo.png" class="book-demo" alt="Book Demo">
+        </a>
     </div>
-
 </body>
 </html>
